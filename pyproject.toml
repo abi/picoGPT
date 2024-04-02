@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "pico-gpt"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <youremail@example.com>"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "3.10.9"
+numpy = "1.24.1" # used for the actual model code/weights
+regex = "2017.4.5" # used by the bpe tokenizer
+requests = "2.27.1" # used to download gpt-2 files from openai
+tqdm = "4.64.0" # progress bar to keep your sanity
+fire = "0.5.0" # easy CLI creation
+
+[tool.poetry.dependencies.tensorflow]
+version = "2.11.0"
+markers = "sys_platform != 'darwin' or platform_machine != 'arm64'"
+
+[tool.poetry.dependencies.tensorflow-macos]
+version = "2.11.0"
+markers = "sys_platform == 'darwin' and platform_machine == 'arm64'"
